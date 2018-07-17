@@ -1,6 +1,6 @@
 # Oz Elentok Dotfiles
 
-- Linux Distribution: Arch Linux
+- Linux Distribution: Ubuntu 18.04
 - Date: 2018-07
 - Window Manager: i3wm
 - Program Launcher: dmenu
@@ -11,7 +11,7 @@
 ## Installation
 
 ```
-sudo pacman -S git
+sudo apt install git
 git clone --recursive https://github.com/ozelentok/dotfiles.git ~/.dotfiles
 cd ~/.dotfiles
 ./install.sh

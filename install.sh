@@ -8,9 +8,10 @@ SELECTED_MODULES_FILE_PATH="/tmp/dotfiles_selected_modules"
 
 # ========================================
 # Install dialog for TUI choice list
-sudo pacman -S dialog
+sudo apt install dialog
 
-dotfiles_packages=(firefox-developer-edition chromium openssh keepassx htop unrar rdesktop gimp audacity vlc smplayer deluge ntfs-3g exfat-utils fuse-exfat alsa-utils net-tools ctags mlocate python python2 python-pip python2-pip nodejs npm ranger strace lsof bind-tools ripgrep udisks2)
+dotfiles_packages=(firefox chromium-browser chromium-codecs-ffmpeg-extra openssh-server openssh-client keepassx htop unrar rdesktop gimp audacity vlc smplayer deluge ntfs-3g exfat-utils exfat-fuse alsa-utils net-tools exuberant-ctags locate python3 python3-pip python python-pip nodejs npm ranger strace lsof dnsutils bind9utils silversearcher-ag udisks2) 
+
 dotfiles_modules=$(ls ./modules)
 
 # ========================================
@@ -34,7 +35,7 @@ selected_modules=$(cat $SELECTED_MODULES_FILE_PATH)
 
 # ========================================
 # Installing selected packages
-sudo pacman -Syu $selected_packages
+sudo apt install $selected_packages
 
 # ========================================
 # Installing selected modules
