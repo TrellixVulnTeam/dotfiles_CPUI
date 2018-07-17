@@ -5,7 +5,7 @@ echo "========================================"
 echo "Configuring Temperatures Sensors"
 echo "========================================"
 
-sudo pacman -S lm_sensors
+sudo apt install lm-sensors
 (
 	sudo sensors-detect
 )
