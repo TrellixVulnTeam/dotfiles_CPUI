@@ -9,7 +9,7 @@ echo "========================================"
 DIR=$(dirname "${BASH_SOURCE[0]}")
 DIR=$(cd -P $DIR && pwd)
 
-sudo pacman -S xorg-server xorg-xinit xorg-xkill
+sudo apt install xserver-xorg xinit x11-utils
 
 (
 	TODIR="/etc/X11/xorg.conf.d/"
