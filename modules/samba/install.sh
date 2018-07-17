@@ -9,7 +9,7 @@ DIR=$(dirname "${BASH_SOURCE[0]}")
 DIR=$(cd -P $DIR && pwd)
 TODIR="/etc/samba"
 
-sudo pacman -S samba
+sudo apt install samba
 
 echo "Enter Samba Username: "
 read smb_user
@@ -28,5 +28,5 @@ read smb_user
 	sudo smbpasswd -a $smb_user
 	echo "$smb_user = \"$smb_user\"" | sudo tee -a /etc/samba/smbusers > /dev/null
 
-	sudo systemctl enable smb nmb
+	sudo systemctl enable smbd nmbd
 )

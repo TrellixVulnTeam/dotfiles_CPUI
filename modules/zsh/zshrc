@@ -2,6 +2,7 @@
 # Set up the prompt
 
 setopt histignorealldups sharehistory
+fpath=($HOME/.zsh/zsh-completions/src $fpath)
 
 # Use emacs keybindings even if our EDITOR is set to vi
 bindkey -e
