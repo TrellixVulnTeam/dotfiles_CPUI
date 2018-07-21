@@ -16,6 +16,12 @@ sudo apt install python3-pip python3-setuptools python-setuptools python-pip npm
 	for PLUGIN in $(grep -E "^call dein#add" $DIR/init.vim | sed -E "s/call dein#add\('(.*)'[,)].*/\1/"); do
 		if [ ! -e "$DIR/plugins/$PLUGIN" ]; then
 			git clone --recursive "https://github.com/$PLUGIN" "$DIR/plugins/$PLUGIN"
+			if [ -e "$DIR/plugins/$PLUGIN/install.sh" ]; then
+				(
+					cd $DIR/plugins/$PLUGIN
+					./install.sh
+				)
+			fi
 		fi
 	done
 
