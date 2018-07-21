@@ -6,7 +6,7 @@
 	path = modules/zsh/ZPrompt
 	url = https://github.com/ozelentok/ZPrompt.git
 	branch = master
-[submodule "modules/neovim/gnu-global/global"]
-	path = modules/neovim/gnu-global/global
-	url = https://aur.archlinux.org/global.git
+[submodule "modules/zsh/zsh-completions"]
+	path = modules/zsh/zsh-completions
+	url = https://github.com/zsh-users/zsh-completions
 	branch = master

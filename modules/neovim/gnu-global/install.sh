@@ -7,22 +7,19 @@ echo "========================================"
 
 DIR=$(dirname "${BASH_SOURCE[0]}")
 DIR=$(cd -P $DIR && pwd)
-TMP_DIR="/tmp/global"
-NAME="global"
 VERSION="6.6.2"
-DIR_NAME="$NAME-$VERSION"
-TAR_NAME="$DIR_NAME.tar.gz"
+ARCHIVE_FILE_NAME="global-$VERSION.tar.gz"
+SOURCE_DIR_NAME="global-$VERSION"
 
 sudo apt install autoconf automake make libncurses5-dev
 
 (
-	mkdir $TMP_DIR
-	cd $TMP_DIR
-	wget "http://tamacom.com/global/$TAR_NAME"
-	tar xf $TAR_NAME
-	cd $DIR_NAME
+	$DIR/bundle.sh
+	tar xf $ARCHIVE_FILE_NAME
+	cd $DIR/$SOURCE_DIR_NAME
+
 	./configure
-	make 
+	make
 	sudo make install
 	sudo pip2 install Pygments
 

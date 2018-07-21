@@ -7,7 +7,7 @@ echo "Configuring ZSH"
 DIR=$(dirname "${BASH_SOURCE[0]}")
 DIR=$(cd -P $DIR && pwd)
 
-sudo apt install zsh gcc make
+sudo apt install zsh gcc g++ make
 
 (
 	cd $DIR
@@ -19,6 +19,10 @@ sudo apt install zsh gcc make
 	if [ ! -L $HOME/.zsh/syntaxhl ]; then
 		ln -s -f $DIR/zsh-syntax-highlighting $HOME/.zsh/syntaxhl
 	fi
+	if [ ! -L $HOME/.zsh/zsh-completions ]; then
+		ln -s -f $DIR/zsh-completions $HOME/.zsh/zsh-completions
+	fi
+
 	sudo usermod -s $(which zsh) $USER
 
 	echo "=============================="

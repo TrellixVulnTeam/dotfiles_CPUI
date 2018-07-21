@@ -8,13 +8,13 @@ echo "========================================"
 DIR=$(dirname "${BASH_SOURCE[0]}")
 DIR=$(cd -P $DIR && pwd)
 
-sudo apt install i3 feh autocutsel
+sudo apt install --install-recommends i3 feh autocutsel
 
 (
 	cd $DIR
 	TODIR="$HOME/.config/i3/"
 	mkdir -p $TODIR
-	ln -s $DIR/config $TODIR
-	ln -s $DIR/i3status.conf $TODIR
-	ln -s $DIR/i3-session $TODIR
+	ln -s -f $DIR/config $TODIR/
+	ln -s -f $DIR/i3status.conf $TODIR/
+	ln -s -f $DIR/i3-session $TODIR/
 )

@@ -13,5 +13,5 @@ sudo apt install git
 (
 	cd $DIR
 	cp $DIR/gitconfig $HOME/.gitconfig
-	ln -s $DIR/gitignore_global $HOME/.gitignore_global
+	ln -s -f $DIR/gitignore_global $HOME/.gitignore_global
 )
