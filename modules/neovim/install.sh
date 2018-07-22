@@ -7,12 +7,18 @@ echo "========================================"
 
 DIR=$(dirname "${BASH_SOURCE[0]}")
 DIR=$(cd -P $DIR && pwd)
+VERSION="0.3.1"
 
 sudo apt remove vim
 sudo apt autoremove
-sudo apt install neovim clang xsel xclip
+sudo apt install clang xsel xclip
 
 $DIR/bundle.sh
+
+(
+	cd $DIR/neovim-$VERSION
+	sudo make install
+)
 
 pip3 install --user -U neovim mypy pycodestyle grip autopep8 yapf --no-index -f $DIR/pip
 pip2 install --user -U neovim Pygments --no-index -f $DIR/pip
