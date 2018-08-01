@@ -9,7 +9,7 @@
 [merge]
 	tool = fugitive
 [core]
-	editor = /usr/bin/nvim
+	editor = /usr/local/bin/nvim
 	excludesfile = ~/.gitignore_global
 [mergetool]
 	prompt = true
